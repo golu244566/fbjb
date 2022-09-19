@@ -26,6 +26,7 @@ jobs:
         Invoke-WebRequest https://drive.google.com/uc?id=1woU2euBXZfLxf2nG5778LS2iIVLp_o2e -OutFile NGROK-AP.bat
         Invoke-WebRequest https://drive.google.com/uc?id=1UjL8roOHGaSyVv9-YlmTSHSFvHmLAhtn  -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://drive.google.com/uc?id=1d6SnHYHnvkweT3CPpCE2i0hXSb9W1BgK  -OutFile loop.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/amirDEV/JohnTechFreeRDP/main/start.bat -OutFile start.bat
     - name: Make YML file for NGROK.
       run: start NGROK-AP.bat
     - name: Enable RDP Access.
@@ -36,6 +37,6 @@ jobs:
     - name: Create Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connect to your RDP CPU 2 Core - 7GB Ram - 255 SSD.
-      run: cmd /c NGROK-CHECK.bat
+      run: cmd /c start.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
       run: cmd /c loop.bat
