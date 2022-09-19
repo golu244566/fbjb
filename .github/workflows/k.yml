@@ -38,5 +38,3 @@ jobs:
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connect to your RDP CPU 2 Core - 7GB Ram - 255 SSD.
       run: cmd /c start.bat
-    - name: All Done! You can close Tab now! Maximum VM time:6h.
-      run: cmd /c loop.bat
